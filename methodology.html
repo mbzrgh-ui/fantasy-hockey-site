@@ -14,8 +14,10 @@ Start share blends LWL's projected starts with actual starts and is normalised w
 <p>Every remaining NHL game is simulated. Each simulated season draws a talent multiplier per skater (offence and physical separately),
 a scoring environment per team-game shared by every skater in it, one starting goalie per team-game (so two fantasy goalies from the same club
 never both start), and Poisson game stats. Lineups are set daily from each roster, filling C/LW/RW/D/G slots with the best available players.
-Teams under 3 goalie appearances stream replacement starts (90% of the time for other managers; always for you) at .900 save %, 45% win rate.
-A team that still misses the minimum forfeits W, GAA and SV%.</p>
+Teams under 3 goalie appearances stream replacement starts at .900 save %, 45% win rate (90% of the time for other managers).
+Your streams are paid for with adds: 69 for the season, minus 12 held for the playoffs, minus adds already used, minus ordinary pickups at your
+pace so far. What's left buys streams at 2 adds each (the goalie, then a skater back), within the 4-adds-a-week cap. Playoff streams come out of
+the 12 held back. A team that still misses the minimum forfeits W, GAA and SV%.</p>
 <p>Current-week totals from Yahoo are locked in; only the remaining days are simulated. Standings use category wins (each category counts),
 the top 8 make the playoffs (weeks 24–26), reseeded each round, with ties going to the higher seed.</p>
 <h2>Injuries</h2>
@@ -24,12 +26,14 @@ are treated as out for the season. The "Injuries +4 wks" scenario pushes every r
 <h2>Decisions</h2>
 <p>Your team is simulated from per-game draws seeded per player, and every roster option faces the identical simulated seasons (common random
 numbers). That's why a one-point change in odds is meaningful. Waiver options are screened from the best available free agents, each paired with the
-drop (from your lowest-value non-keepers) that costs you least.</p>
+drop (from your lowest-value non-keepers, and every goalie when you carry three) that costs you least.</p>
 <p>Lineup advice weights each stat by how much one more unit moves this week's matchup (the chance the category margin is near zero), so a
 category you've already won or lost carries little weight.</p>
 <h2>Known limits</h2>
 <ul><li>Other managers' future pickups and trades aren't modelled, apart from goalie streaming.</li>
 <li>Waiver claims (you're on a rolling list) aren't modelled; recently dropped players may need a claim.</li>
-<li>Streaming uses one add per start from your 4-per-week limit.</li>
+<li>The adds budget and pickup pace are set in config.yaml (adds_reserved_playoffs, adds_per_stream, pickup_adds_per_week). Adds made this week are read from
+Yahoo's recent transactions, which only list the last few dozen league moves.</li>
+<li>Roster limits and IR slots aren't enforced: a player returning from IR is counted as active without a matching drop.</li>
 <li>Odds aren't yet calibrated. The track record section scores each week's predictions as results come in.</li></ul>
 </body></html>
