@@ -27,13 +27,21 @@ are treated as out for the season. The "Injuries +4 wks" scenario pushes every r
 <p>Your team is simulated from per-game draws seeded per player, and every roster option faces the identical simulated seasons (common random
 numbers). That's why a one-point change in odds is meaningful. Waiver options are screened from the best available free agents, each paired with the
 drop (from your lowest-value non-keepers, and every goalie when you carry three) that costs you least.</p>
-<p>Lineup advice weights each stat by how much one more unit moves this week's matchup (the chance the category margin is near zero), so a
-category you've already won or lost carries little weight.</p>
+<p>Your standings count every category, so this week's advice maximises expected categories won (a tie counts half). Today's lineup is chosen by
+scoring every legal lineup of the skaters who play today against the same simulated week, with the other days set the same way; the gain for each
+swap is shown with the categories it moves. Goalie plans for the rest of the week (who starts which night, up to two a night) are scored the same way,
+including any streams needed to reach 3 appearances. Today's start chances use Daily Faceoff: confirmed 97%, likely 85%, projected 70%.</p>
+<p>For the rest of the season your goalies follow your policy: start goalies who are confirmed to start until 3 appearances, then sit them while both
+your GAA and SV% beat the opponent's projected ratios. Rosters follow Yahoo's limits: 16 active players, and a player in an IR slot only counts once
+he's activated with a drop. Other managers activate returning IR players and drop their weakest skater.</p>
+<p>A player in an IR slot is evaluated by activating him with each possible drop (keepers and protected players excluded) over the rest of the season,
+and by whether activating today or next Monday wins more categories this week. Pickups are charged one add; a short-term stream is a pickup kept until
+Monday, shown when it adds at least 0.10 categories this week for little season cost.</p>
 <h2>Known limits</h2>
 <ul><li>Other managers' future pickups and trades aren't modelled, apart from goalie streaming.</li>
 <li>Waiver claims (you're on a rolling list) aren't modelled; recently dropped players may need a claim.</li>
 <li>The adds budget and pickup pace are set in config.yaml (adds_reserved_playoffs, adds_per_stream, pickup_adds_per_week). Adds made this week are read from
 Yahoo's recent transactions, which only list the last few dozen league moves.</li>
-<li>Roster limits and IR slots aren't enforced: a player returning from IR is counted as active without a matching drop.</li>
+<li>Goalie plans for later days this week are open-loop: they're re-decided each morning with the new totals.</li>
 <li>Odds aren't yet calibrated. The track record section scores each week's predictions as results come in.</li></ul>
 </body></html>
