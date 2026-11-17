@@ -25,8 +25,11 @@ the top 8 make the playoffs (weeks 24–26), reseeded each round, with ties goin
 are treated as out for the season. The "Injuries +4 wks" scenario pushes every return back four weeks.</p>
 <h2>Decisions</h2>
 <p>Your team is simulated from per-game draws seeded per player, and every roster option faces the identical simulated seasons (common random
-numbers). That's why a one-point change in odds is meaningful. Waiver options are screened from the best available free agents, each paired with the
-drop (from your lowest-value non-keepers, and every goalie when you carry three) that costs you least.</p>
+numbers). That's why a one-point change in odds is meaningful. Pickup options are screened from the best unrostered players, each paired with the
+drop (from your lowest-value non-keepers, and every goalie when you carry three) that costs you least. Players still on waivers join your roster
+(and the drop leaves) only on the day they clear, and they're never suggested as short-term streams. Yahoo players are matched to NHL players by
+name, team and position, so two players with the same name on one team (Vancouver's two Elias Petterssons) can't be confused; anything ambiguous is
+left unmatched and listed at the bottom of the page.</p>
 <p>Your standings count every category, so this week's advice maximises expected categories won (a tie counts half). Today's lineup is chosen by
 scoring every legal lineup of the skaters who play today against the same simulated week, with the other days set the same way; the gain for each
 swap is shown with the categories it moves. Goalie plans for the rest of the week (who starts which night, up to two a night) are scored the same way,
@@ -39,7 +42,7 @@ and by whether activating today or next Monday wins more categories this week. P
 Monday, shown when it adds at least 0.10 categories this week for little season cost.</p>
 <h2>Known limits</h2>
 <ul><li>Other managers' future pickups and trades aren't modelled, apart from goalie streaming.</li>
-<li>Waiver claims (you're on a rolling list) aren't modelled; recently dropped players may need a claim.</li>
+<li>Waiver priority is modelled from the league's recent claim pace, spread evenly across teams; in practice a few active managers make most claims, so you may climb back faster or slower than shown. Whether another team also claims a player isn't modelled.</li>
 <li>The adds budget and pickup pace are set in config.yaml (adds_reserved_playoffs, adds_per_stream, pickup_adds_per_week). Adds made this week are read from
 Yahoo's recent transactions, which only list the last few dozen league moves.</li>
 <li>Goalie plans for later days this week are open-loop: they're re-decided each morning with the new totals.</li>
